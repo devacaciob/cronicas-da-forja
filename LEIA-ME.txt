@@ -1,0 +1,19 @@
+CRÔNICAS DA FORJA — Método RAC
+================================
+
+Conteúdo:
+- index.html: jogo completo
+- manifest.webmanifest: identidade instalável do app
+- sw.js: cache offline (service worker)
+- icon.svg, icon-192.png, icon-512.png: ícones
+
+Como testar:
+1. Abra index.html no navegador para testar as funções principais. O salvamento local funciona no navegador.
+2. Para instalar como aplicativo e habilitar o modo offline, publique a pasta em um endereço HTTPS (por exemplo, GitHub Pages). O navegador exige HTTPS ou localhost para instalar PWA e registrar service worker.
+3. Abra o endereço no Chrome do Android, aguarde carregar e use "Instalar app" ou menu ⋮ > "Instalar app"/"Adicionar à tela inicial".
+4. Depois da primeira carga online, o app abre sem internet. Os dados ficam no armazenamento local do navegador/aplicativo.
+
+Importante:
+- Não limpe os dados do navegador sem antes exportar seu progresso.
+- Use Exportar progresso para criar um backup JSON e Importar progresso para restaurá-lo.
+- Esta é uma primeira versão jogável. Os textos e recompensas do método RAC são uma estrutura inicial e podem ser personalizados conforme as ferramentas reais do seu método.

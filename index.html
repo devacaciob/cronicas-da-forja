@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#090b10">
+<meta name="description" content="Um RPG de desenvolvimento pessoal baseado no método Reconhecer, Aprender e Corrigir.">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<title>Crônicas da Forja — Método RAC</title>
+<style>
+:root{--bg:#090b10;--panel:#141b29;--panel2:#101622;--line:#29364b;--gold:#d7b34a;--gold2:#f2d477;--text:#e8edf5;--muted:#9aa7b9;--green:#48c78e;--red:#e36b6b;--blue:#6bb7e8;--purple:#b99af5}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 10% 0%,#29200d 0,transparent 30%),radial-gradient(circle at 100% 60%,#151e32 0,transparent 35%),var(--bg);color:var(--text);font:15px system-ui,-apple-system,Segoe UI,sans-serif;min-height:100vh}
+button,input,textarea{font:inherit}button{cursor:pointer}.wrap{max-width:1120px;margin:auto;padding:16px}.top{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:12px 0 18px;border-bottom:1px solid var(--line)}.brand{display:flex;align-items:center;gap:12px}.logo{width:54px;height:54px;border-radius:16px;background:linear-gradient(145deg,#f1d477,#9b7019);display:grid;place-items:center;box-shadow:0 0 28px #d7b34a33}.logo svg{width:38px;height:38px}.brand h1{font:700 clamp(17px,3vw,25px) Georgia,serif;color:var(--gold2);margin:0;letter-spacing:.5px}.brand p{margin:4px 0 0;color:var(--muted);font-size:12px}.top-actions{display:flex;align-items:center;gap:8px;flex-wrap:wrap}.pill,.btn,.tab{border:1px solid var(--line);border-radius:12px;padding:9px 12px;background:var(--panel2);color:var(--text)}.pill{font-size:13px}.btn.primary{background:linear-gradient(135deg,#e5c45d,#a77d1b);color:#15120a;border:0;font-weight:800}.btn.danger{border-color:#713535;color:#ffaaaa}.btn:disabled{opacity:.4;cursor:not-allowed}.layout{display:grid;grid-template-columns:340px 1fr;gap:16px;margin-top:18px}.panel{background:linear-gradient(145deg,#182132f2,#101622f5);border:1px solid #d7b34a30;border-radius:18px;padding:17px;box-shadow:0 12px 34px #0005}.side{display:grid;gap:14px;align-content:start}.herohead{display:flex;gap:12px;align-items:center}.avatar{width:64px;height:64px;border-radius:17px;background:linear-gradient(#303b51,#101622);border:1px solid var(--gold);display:grid;place-items:center;font-size:34px}.herohead h2{font:700 19px Georgia,serif;margin:0 0 4px}.muted{color:var(--muted)}.small{font-size:12px}.barlabel{display:flex;justify-content:space-between;font-size:12px;margin:13px 0 6px;color:var(--muted)}.bar{height:10px;background:#080c13;border-radius:20px;overflow:hidden;border:1px solid #2a3548}.fill{height:100%;width:0;background:linear-gradient(90deg,#a67a19,#f2d477);transition:width .3s}.fill.hp{background:linear-gradient(90deg,#16845a,#58dfa1)}.stats{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:14px}.stat{background:#0c121d;border:1px solid var(--line);border-radius:12px;padding:10px}.stat b{display:block;font-size:18px}.stat span{font-size:11px;color:var(--muted)}.section-title{font:700 17px Georgia,serif;color:var(--gold2);margin:0 0 12px}.tabs{display:grid;grid-template-columns:repeat(4,1fr);gap:7px;margin-bottom:14px}.tab{font-weight:700;font-size:13px}.tab.active{background:var(--gold);color:#17130a;border-color:var(--gold)}.view{display:none}.view.active{display:block}.quest{background:#0e1521;border:1px solid var(--line);border-radius:14px;padding:13px;margin:9px 0}.quest.done{border-color:#287c5a;background:#0d1c19}.quest-top{display:flex;justify-content:space-between;gap:10px}.quest h3{font-size:15px;margin:0 0 5px}.tag{font-size:10px;padding:4px 7px;border-radius:20px;background:#27354b;color:#d9e5f5;white-space:nowrap;height:max-content}.quest p{font-size:13px;color:var(--muted);margin:5px 0 10px}.actions{display:flex;gap:8px;flex-wrap:wrap}.actions .btn{font-size:12px;padding:8px 10px}.field{width:100%;background:#090f19;border:1px solid var(--line);border-radius:10px;color:var(--text);padding:10px;margin:5px 0 10px}.phase{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:12px 0}.phase div{padding:10px;border:1px solid var(--line);border-radius:12px;background:#0c121d}.phase b{display:block;color:var(--gold2);font-size:13px}.phase span{font-size:11px;color:var(--muted)}.chapter{display:flex;gap:12px;align-items:center}.chapter-icon{font-size:27px;width:48px;height:48px;display:grid;place-items:center;background:#0b111b;border:1px solid var(--line);border-radius:13px}.chapter h3{margin:0 0 4px;font-size:15px}.chapter p{margin:0;color:var(--muted);font-size:12px}.locked{opacity:.48}.item{display:flex;align-items:center;gap:12px}.item .emoji{font-size:29px}.item .desc{flex:1}.item h3{font-size:14px;margin:0 0 4px}.item p{font-size:12px;color:var(--muted);margin:0}.gold{color:var(--gold2);font-weight:800}.notice{border:1px solid #806727;background:#332a12;color:#f5dfa0;padding:12px;border-radius:12px;font-size:12px;line-height:1.5}.footer{text-align:center;color:#68778b;font-size:11px;padding:22px 0}.modal{position:fixed;inset:0;background:#000b;display:none;align-items:center;justify-content:center;padding:16px;z-index:5}.modal.show{display:flex}.modalbox{width:min(520px,100%);max-height:90vh;overflow:auto;background:#141d2b;border:1px solid var(--gold);border-radius:18px;padding:18px}.modalbox h2{font:700 20px Georgia,serif;color:var(--gold2);margin-top:0}.toast{position:fixed;bottom:18px;left:50%;transform:translateX(-50%);background:#e8d18b;color:#17130a;padding:11px 16px;border-radius:12px;font-weight:700;z-index:10;box-shadow:0 8px 30px #0008;display:none;max-width:90%;text-align:center}.toast.show{display:block}@media(max-width:800px){.layout{grid-template-columns:1fr}.tabs{grid-template-columns:repeat(2,1fr)}.wrap{padding:12px}.panel{padding:14px}.top{align-items:flex-start}.top-actions{width:100%}.pill{flex:1;text-align:center}} 
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+ <div class="brand"><div class="logo"><svg viewBox="0 0 64 64" fill="none" stroke="#211906" stroke-width="3"><path d="M32 5 53 13v17c0 14-9 24-21 29C20 54 11 44 11 30V13L32 5Z" fill="#f5dc83"/><path d="M22 34 29 41 44 23" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div><h1>CRÔNICAS DA FORJA</h1><p>Um RPG de evolução pessoal • Método Reconhecer, Aprender e Corrigir</p></div></div>
+ <div class="top-actions"><div class="pill">🪙 <b id="goldTop">50</b> ouro</div><div class="pill">🔥 <b id="streakTop">0</b> dias</div><button class="btn primary" id="installBtn" hidden>＋ Instalar app</button></div>
+</header>
+<div class="layout">
+<aside class="side">
+ <section class="panel">
+  <div class="herohead"><div class="avatar">🛡️</div><div><h2 id="heroName">Guardião da Forja</h2><div class="small gold" id="rank">Aprendiz • Nível 1</div><div class="small muted" id="chapterLabel">Capítulo 1 — O Despertar</div></div></div>
+  <div class="barlabel"><span>Experiência</span><b id="xpLabel">0 / 100 XP</b></div><div class="bar"><div class="fill" id="xpBar"></div></div>
+  <div class="barlabel"><span>Vitalidade (HP)</span><b id="hpLabel">100 / 100</b></div><div class="bar"><div class="fill hp" id="hpBar"></div></div>
+  <div class="stats">
+   <div class="stat"><b id="str">5</b><span>⚔️ Força</span></div><div class="stat"><b id="def">5</b><span>🛡️ Defesa</span></div>
+   <div class="stat"><b id="int">5</b><span>🧠 Inteligência</span></div><div class="stat"><b id="disc">5</b><span>🔥 Disciplina</span></div>
+   <div class="stat"><b id="wis">5</b><span>✨ Sabedoria</span></div><div class="stat"><b id="points">0</b><span>⭐ Pontos livres</span></div>
+  </div>
+  <div class="actions" style="margin-top:12px"><button class="btn" id="allocateBtn">Distribuir pontos</button><button class="btn" id="renameBtn">Renomear herói</button></div>
+ </section>
+ <section class="panel"><h2 class="section-title">Equipamento</h2><div id="equipment" class="small muted">🗡️ Arma: Adaga de Aprendiz<br>🛡️ Armadura: Túnica Simples<br>📿 Relíquia: Nenhuma</div></section>
+ <section class="panel"><h2 class="section-title">Seu diário RAC</h2><p class="small muted">Registre o que reconheceu, aprendeu e decidiu corrigir. O diário fica salvo neste aparelho.</p><button class="btn" id="journalBtn">Abrir diário</button><button class="btn" id="backupBtn">Exportar progresso</button><button class="btn" id="restoreBtn">Importar progresso</button><input id="restoreFile" type="file" accept="application/json" hidden></section>
+</aside>
+<main>
+ <nav class="tabs">
+  <button class="tab active" data-tab="missions">📜 Missões RAC</button><button class="tab" data-tab="campaign">⚔️ Campanha</button><button class="tab" data-tab="shop">⚒️ Arsenal</button><button class="tab" data-tab="achievements">🏆 Conquistas</button>
+ </nav>
+ <section class="view active" id="missions">
+  <div class="panel"><h2 class="section-title">Missões do dia — Só hoje</h2><p class="small muted">Pequenas ações reais. Complete as três etapas do RAC e registre uma correção prática.</p><div class="barlabel"><span>Progresso diário</span><b id="dailyLabel">0 / 3 missões</b></div><div class="bar"><div class="fill hp" id="dailyBar"></div></div><div id="questList"></div>
+   <div class="notice">💡 <b>Regra da Forja:</b> honestidade vale mais que pontuação. Não marque uma missão como concluída se não realizou a ação. Se hoje não deu certo, reconheça, aprenda e recomece amanhã.</div>
+  </div>
+ </section>
+ <section class="view" id="campaign">
+  <div class="panel"><h2 class="section-title">A jornada do Guardião</h2><p class="small muted">Cada capítulo é liberado com experiência conquistada nas missões. Os inimigos são representações simbólicas de obstáculos — não rótulos sobre quem você é.</p><div id="chapterList"></div></div>
+  <div class="panel" style="margin-top:14px"><h2 class="section-title">Arena de treinamento</h2><div id="battleBox"></div></div>
+ </section>
+ <section class="view" id="shop">
+  <div class="panel"><h2 class="section-title">Arsenal da Forja</h2><p class="small muted">Use ouro conquistado em missões para adquirir equipamentos permanentes.</p><div id="shopList"></div></div>
+ </section>
+ <section class="view" id="achievements">
+  <div class="panel"><h2 class="section-title">Livro de conquistas</h2><div id="achievementList"></div></div>
+ </section>
+</main>
+</div>
+<div class="footer">Crônicas da Forja • Versão inicial 1.0 • Seus dados ficam armazenados localmente neste dispositivo.</div>
+</div>
+<div class="modal" id="modal"><div class="modalbox"><div id="modalContent"></div><div class="actions"><button class="btn primary" id="modalSave">Salvar</button><button class="btn" id="modalClose">Fechar</button></div></div></div>
+<div class="toast" id="toast"></div>
+<script>
+const KEY='cronicasForjaSaveV1';
+const today=()=>new Date().toLocaleDateString('en-CA');
+const defaults=()=>({name:'Guardião da Forja',level:1,xp:0,gold:50,hp:100,maxHp:100,stats:{str:5,def:5,int:5,disc:5,wis:5},points:0,streak:0,lastDay:'',day:today(),completed:[],journal:[],owned:['weapon0','armor0'],equipped:{weapon:'weapon0',armor:'armor0',relic:''},wins:[],claimed:[]});
+let state=load();
+function load(){try{return {...defaults(),...JSON.parse(localStorage.getItem(KEY)||'{}')}}catch(e){return defaults()}}
+function save(){localStorage.setItem(KEY,JSON.stringify(state));render()}
+const quests=[
+ {id:'q1',name:'O espelho do reconhecimento',phase:'R — Reconhecer',desc:'Observe uma situação do seu dia em que poderia ter agido melhor. Descreva os fatos sem se atacar.',xp:25,gold:12,stat:'wis'},
+ {id:'q2',name:'A lição escondida',phase:'A — Aprender',desc:'O que essa situação ensinou? Identifique uma ideia ou habilidade que pode ajudar na próxima vez.',xp:25,gold:12,stat:'int'},
+ {id:'q3',name:'A primeira martelada',phase:'C — Corrigir',desc:'Escolha uma ação pequena, concreta e possível para colocar o aprendizado em prática hoje.',xp:35,gold:18,stat:'disc'}
+];
+const chapters=[
+ {name:'O Despertar',enemy:'A Névoa da Negação',icon:'🌫️',need:0,desc:'O primeiro passo é enxergar com honestidade onde você está.'},
+ {name:'Vale do Aprendizado',enemy:'O Bibliotecário das Desculpas',icon:'📚',need:120,desc:'Transforme experiências em conhecimento útil.'},
+ {name:'A Forja da Correção',enemy:'O Ferreiro da Procrastinação',icon:'🔥',need:300,desc:'O aprendizado ganha força quando vira atitude.'},
+ {name:'A Guerra Interior',enemy:'O Colosso da Autossabotagem',icon:'👹',need:600,desc:'Pratique constância diante de obstáculos recorrentes.'},
+ {name:'O Reino Reconstruído',enemy:'O Dragão do Velho Hábito',icon:'🐉',need:1000,desc:'Consolide o que aprendeu e continue evoluindo.'}
+];
+const items=[
+ {id:'weapon0',slot:'weapon',name:'Adaga de Aprendiz',icon:'🗡️',price:0,bonus:'str',value:0,desc:'Sua primeira ferramenta de ação.'},
+ {id:'weapon1',slot:'weapon',name:'Espada da Constância',icon:'⚔️',price:90,bonus:'str',value:2,desc:'+2 Força'},
+ {id:'weapon2',slot:'weapon',name:'Lâmina do Discernimento',icon:'🗡️',price:180,bonus:'wis',value:3,desc:'+3 Sabedoria'},
+ {id:'armor0',slot:'armor',name:'Túnica Simples',icon:'🥋',price:0,bonus:'def',value:0,desc:'Proteção inicial.'},
+ {id:'armor1',slot:'armor',name:'Armadura do Autocontrole',icon:'🛡️',price:100,bonus:'def',value:3,desc:'+3 Defesa'},
+ {id:'armor2',slot:'armor',name:'Manto da Resiliência',icon:'🧥',price:190,bonus:'hp',value:25,desc:'+25 HP máximo'},
+ {id:'relic1',slot:'relic',name:'Amuleto da Clareza',icon:'📿',price:140,bonus:'int',value:3,desc:'+3 Inteligência'}
+];
+function effective(k){let n=state.stats[k]||0;for(const id of Object.values(state.equipped)){const it=items.find(x=>x.id===id);if(it&&it.bonus===k)n+=it.value}return n}
+function xpNeed(){return state.level*100}
+function addXP(n){state.xp+=n;while(state.xp>=xpNeed()){state.xp-=xpNeed();state.level++;state.points+=2;state.maxHp+=10;state.hp=Math.min(state.maxHp,state.hp+20);toast('Nível '+state.level+' alcançado! +2 pontos de atributo.')} }
+function dayCheck(){const d=today();if(state.day!==d){const y=new Date();const prev=new Date(y);prev.setDate(y.getDate()-1);const prevS=prev.toLocaleDateString('en-CA');if(state.lastDay===prevS)state.streak++;else if(state.lastDay!==d)state.streak=0;state.day=d;state.completed=[];}}
+function completeQuest(id){if(state.completed.includes(id))return;const q=quests.find(x=>x.id===id);const a=prompt('R — Reconhecer: o que você percebeu?');if(a===null)return;const b=prompt('A — Aprender: o que essa situação ensinou?');if(b===null)return;const c=prompt('C — Corrigir: qual ação concreta você vai realizar?');if(c===null)return;if(!a.trim()||!b.trim()||!c.trim()){toast('Preencha as três etapas para concluir.');return}state.journal.unshift({date:new Date().toLocaleString('pt-BR'),title:q.name,a,b,c});state.completed.push(id);state.lastDay=today();state.gold+=q.gold;addXP(q.xp);state.stats[q.stat]++;if(state.completed.length===3&&!state.claimed.includes(today())){state.gold+=20;state.claimed.push(today());toast('Bônus diário: +20 ouro!')}save();toast('Missão concluída: +'+q.xp+' XP e +'+q.gold+' ouro!')}
+function render(){dayCheck();document.getElementById('heroName').textContent=state.name;document.getElementById('rank').textContent='Aventureiro • Nível '+state.level;document.getElementById('goldTop').textContent=state.gold;document.getElementById('streakTop').textContent=state.streak;document.getElementById('xpLabel').textContent=state.xp+' / '+xpNeed()+' XP';document.getElementById('xpBar').style.width=(state.xp/xpNeed()*100)+'%';document.getElementById('hpLabel').textContent=state.hp+' / '+state.maxHp;document.getElementById('hpBar').style.width=(state.hp/state.maxHp*100)+'%';document.getElementById('str').textContent=effective('str');document.getElementById('def').textContent=effective('def');document.getElementById('int').textContent=effective('int');document.getElementById('disc').textContent=effective('disc');document.getElementById('wis').textContent=effective('wis');document.getElementById('points').textContent=state.points;
+ const done=state.completed.length;document.getElementById('dailyLabel').textContent=done+' / 3 missões';document.getElementById('dailyBar').style.width=(done/3*100)+'%';
+ document.getElementById('questList').innerHTML=quests.map(q=>`<article class="quest ${state.completed.includes(q.id)?'done':''}"><div class="quest-top"><div><h3>${q.name}</h3><span class="tag">${q.phase}</span></div><span class="gold">+${q.xp} XP</span></div><p>${q.desc}</p><div class="actions"><button class="btn ${state.completed.includes(q.id)?'':'primary'}" ${state.completed.includes(q.id)?'disabled':''} onclick="completeQuest('${q.id}')">${state.completed.includes(q.id)?'✓ Concluída':'Iniciar missão'}</button><span class="small muted">🪙 ${q.gold} ouro</span></div></article>`).join('');
+ document.getElementById('chapterLabel').textContent='Capítulo '+(Math.min(5,chapters.filter(c=>state.level*100-state.xp>=c.need).length||1));
+ document.getElementById('chapterList').innerHTML=chapters.map((c,i)=>{let unlocked=(state.level-1)*100+state.xp>=c.need;let defeated=state.wins.includes(i);return `<article class="quest ${unlocked?'':'locked'}"><div class="chapter"><div class="chapter-icon">${c.icon}</div><div style="flex:1"><h3>Capítulo ${i+1} — ${c.name}</h3><p>${c.desc}</p><p style="margin-top:5px">Chefe: <b>${c.enemy}</b> • ${unlocked?'Disponível':'Requer '+c.need+' XP'}</p></div><span>${defeated?'🏅':'🔒'.replace('🔒',unlocked?'⚔️':'🔒')}</span></div>${unlocked&&!defeated?`<button class="btn primary" style="margin-top:10px" onclick="fight(${i})">Enfrentar chefe</button>`:''}${defeated?'<p class="gold" style="margin-top:8px">✓ Chefe derrotado</p>':''}</article>`}).join('');
+ document.getElementById('battleBox').innerHTML='<p class="small muted">Escolha um capítulo liberado para enfrentar seu chefe. A batalha representa o compromisso de aplicar uma correção prática.</p><p>⚔️ Poder de combate: <b>'+ (effective('str')+effective('int')+effective('disc'))+'</b> • 🛡️ Resistência: <b>'+ (effective('def')+effective('wis'))+'</b></p>';
+ document.getElementById('shopList').innerHTML=items.map(it=>{let owned=state.owned.includes(it.id);return `<article class="quest"><div class="item"><div class="emoji">${it.icon}</div><div class="desc"><h3>${it.name}</h3><p>${it.desc} ${it.slot==='weapon'?'• Arma':it.slot==='armor'?'• Armadura':'• Relíquia'}</p></div><div style="text-align:right"><div class="gold">${it.price?it.price+' 🪙':'Grátis'}</div><button class="btn ${owned?'':'primary'}" style="margin-top:6px" onclick="buy('${it.id}')" ${owned?'disabled':''}>${owned?'Adquirido':'Comprar'}</button>${owned?`<button class="btn" style="margin-top:4px" onclick="equip('${it.id}')">Equipar</button>`:''}</div></div></article>`}).join('');
+ document.getElementById('equipment').innerHTML=['weapon','armor','relic'].map(s=>{let id=state.equipped[s],it=items.find(x=>x.id===id);return (s==='weapon'?'🗡️ Arma: ':s==='armor'?'🛡️ Armadura: ':'📿 Relíquia: ')+(it?it.name:'Nenhuma')}).join('<br>');
+ const achievements=[['Primeiro passo','Conclua sua primeira missão',state.journal.length>=1],['Tríade RAC','Conclua as três missões do mesmo dia',state.claimed.length>=1],['Aprendiz da Forja','Alcance o nível 2',state.level>=2],['Colecionador','Adquira um equipamento',state.owned.length>2],['Guardião persistente','Registre 5 reflexões',state.journal.length>=5]];
+ document.getElementById('achievementList').innerHTML=achievements.map(a=>`<article class="quest ${a[2]?'done':''}"><b>${a[2]?'🏆':'🔒'} ${a[0]}</b><p>${a[1]}</p></article>`).join('');
+}
+function fight(i){const c=chapters[i];const power=effective('str')+effective('int')+effective('disc');const required=18+i*8;if(power<required){toast('Treine seus atributos antes deste confronto. Poder necessário: '+required);return}const answer=prompt('CHEFE: '+c.enemy+'\nAntes de lutar, escreva uma ação real que representa enfrentar este obstáculo:');if(!answer||!answer.trim())return;state.wins.push(i);state.gold+=50+i*20;addXP(60+i*30);state.hp=Math.max(1,state.hp- Math.max(0,12+i*3-effective('def')));state.journal.unshift({date:new Date().toLocaleString('pt-BR'),title:'Vitória: '+c.enemy,a:'Reconheci o obstáculo: '+c.enemy,b:'Preparei meus atributos e minha estratégia.',c:answer});save();toast('Vitória! Recompensas recebidas.')}
+function buy(id){const it=items.find(x=>x.id===id);if(state.owned.includes(id)||state.gold<it.price)return;state.gold-=it.price;state.owned.push(id);save();toast(it.name+' adquirido!')}
+function equip(id){const it=items.find(x=>x.id===id);if(!it)return;state.equipped[it.slot]=id;save();toast(it.name+' equipado!')}
+function toast(s){const t=document.getElementById('toast');t.textContent=s;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2400)}
+document.querySelectorAll('.tab').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));document.querySelectorAll('.view').forEach(x=>x.classList.remove('active'));b.classList.add('active');document.getElementById(b.dataset.tab).classList.add('active')}));
+function modal(title,body,saveFn){document.getElementById('modalContent').innerHTML='<h2>'+title+'</h2>'+body;document.getElementById('modal').classList.add('show');document.getElementById('modalSave').onclick=()=>{saveFn();document.getElementById('modal').classList.remove('show')}}
+document.getElementById('modalClose').onclick=()=>document.getElementById('modal').classList.remove('show');
+document.getElementById('allocateBtn').onclick=()=>{if(!state.points){toast('Você não tem pontos livres.');return}modal('Distribuir atributos','<p class="small muted">Cada melhoria custa 1 ponto.</p><label>Escolha um atributo</label><select id="statChoice" class="field"><option value="str">Força</option><option value="def">Defesa</option><option value="int">Inteligência</option><option value="disc">Disciplina</option><option value="wis">Sabedoria</option></select>',()=>{state.stats[document.getElementById('statChoice').value]++;state.points--;save()})};
+document.getElementById('renameBtn').onclick=()=>{modal('Nome do herói','<input id="newName" class="field" maxlength="28" value="'+state.name.replace(/"/g,'&quot;')+'">',()=>{let v=document.getElementById('newName').value.trim();if(v)state.name=v;save()})};
+document.getElementById('journalBtn').onclick=()=>{let body=state.journal.length?state.journal.map(j=>`<article class="quest"><b>${j.title}</b><p>${j.date}</p><p><b>Reconhecer:</b> ${escapeHtml(j.a)}</p><p><b>Aprender:</b> ${escapeHtml(j.b)}</p><p><b>Corrigir:</b> ${escapeHtml(j.c)}</p></article>`).join(''):'<p class="muted">Seu diário ainda está vazio. Conclua uma missão para começar.</p>';modal('Diário de evolução',body,()=>{}) ;document.getElementById('modalSave').style.display='none';};
+function escapeHtml(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+document.getElementById('backupBtn').onclick=()=>{const blob=new Blob([JSON.stringify(state,null,2)],{type:'application/json'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='cronicas-da-forja-save.json';a.click();URL.revokeObjectURL(a.href)};
+document.getElementById('restoreBtn').onclick=()=>document.getElementById('restoreFile').click();
+document.getElementById('restoreFile').onchange=async e=>{const f=e.target.files[0];if(!f)return;try{const s=JSON.parse(await f.text());if(!s.stats||!Array.isArray(s.completed))throw Error();state={...defaults(),...s};save();toast('Progresso restaurado!')}catch(err){toast('Arquivo de progresso inválido.')}};
+let installPrompt=null;window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();installPrompt=e;document.getElementById('installBtn').hidden=false});document.getElementById('installBtn').onclick=async()=>{if(installPrompt){installPrompt.prompt();await installPrompt.userChoice;installPrompt=null}else toast('No Chrome, abra o menu ⋮ e escolha “Instalar app” ou “Adicionar à tela inicial”.')};
+if('serviceWorker' in navigator && location.protocol.startsWith('http'))window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}));
+render();
+</script>
+</body></html>
